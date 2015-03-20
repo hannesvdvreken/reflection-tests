@@ -1,0 +1,14 @@
+{
+    "require": {
+        "symfony/stopwatch": "~2.6",
+        "league/container": "~1.3"
+    },
+    "autoload-dev": {
+        "files": [
+            "stubs/functions.php"
+        ],
+        "psr-4": {
+            "Stubs\\": "stubs/"
+        }
+    }
+}
