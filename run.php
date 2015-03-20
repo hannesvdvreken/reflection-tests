@@ -13,14 +13,11 @@ $ctorTests = function (Container $container) {
 };
 
 $callableTests = function (Container $container) {
-    foreach (range(1, 33333) as $i) {
+    foreach (range(1, 50000) as $i) {
         $container->call('Stubs\foo');
     }
-    foreach (range(1, 33333) as $i) {
+    foreach (range(1, 50000) as $i) {
         $container->call('Stubs\Qux::foo');
-    }
-    foreach (range(1, 33333) as $i) {
-        $container->call(array($container->get('Stubs\Qux'), 'qux'));
     }
 };
 
@@ -52,6 +49,8 @@ $container->add('Stubs\Baz')->withArgument('Stubs\Qux');
 $container->add('Stubs\Qux', new \Stubs\Qux());
 
 $container->invokable('Stubs\foo')->withArgument('Stubs\Foo')->withArgument(false);
+$callableTests($container);
+$container->invokable('Stubs\Qux::foo')->withArgument('Stubs\Foo')->withArgument(false);
 $callableTests($container);
 
 $event = $stopwatch->stop('callable.without_reflection');
