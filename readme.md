@@ -11,7 +11,7 @@ Use `phpbrew switch php-5.3.29` to switch the PHP version. Use `php --version` t
 
 ## Box
 
-The box is a 64 bit installation of Ubuntu's Trusty Thar (14.04) distribution.
+The box is a 64 bit installation of Ubuntu's Trusty Thar (14.04) distribution. 2GB of memory and 2 CPUs are given to that machine.
 
 ## Test suite
 
